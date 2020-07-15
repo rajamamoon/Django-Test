@@ -21,3 +21,10 @@ class Choice(models.Model):
     votes = models.IntegerField(default=0)
     def __str__(self):
         return self.choice_text
+
+
+class Student(models.Model):
+
+    name = models.CharField(blank=True,null=True,max_length=20)
+    birth_date = models.DateField()
+    country = models.CharField(default="UAE",max_length=20)

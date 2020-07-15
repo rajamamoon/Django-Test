@@ -1,11 +1,29 @@
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, HttpResponse
 from django.shortcuts import get_object_or_404, render
 from django.urls import reverse
 from django.views import generic
 from django.utils import timezone
+import datetime  
+from .models import Choice, Question, Student
 
-from .models import Choice, Question
 
+
+def home_view(request):
+
+    student_list = Student.objects.all()
+    context = {
+        "student_details" : student_list,
+        "x": request.method
+    }
+    return render(request, 'polls/index.html', context)
+
+def name_view(request, student_name):
+    student_list = Student.objects.filter(name__iexact=student_name)
+    context = {
+        "student_details" : student_list,
+        "x": request.method
+    }
+    return render(request, 'polls/student.html', context)
 
 class IndexView(generic.ListView):
     template_name = 'polls/index.html'
