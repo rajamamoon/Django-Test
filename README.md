@@ -1,9 +1,9 @@
 # Django-Test
 A simple lightweight Django web App developed to take votes on polls
 # Requirements
-Python 
-Django
-Postgresql
+1. Python 
+2. Django
+3. Postgresql
 # How to run the porject
 change the working directory to the project directory
 use the command "python manage.py runserver" to run the server
