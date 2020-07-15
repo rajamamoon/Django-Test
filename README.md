@@ -7,7 +7,6 @@ A simple lightweight Django web App developed to take votes on polls
 # How to run the project
 change the working directory to the project directory
 use the command "python manage.py runserver" to run the server.
-
 browse to "http://localhost:8000/polls/" to access the app.
 
 # How to add and modify questions to the poll
